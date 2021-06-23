@@ -24,8 +24,22 @@
 	$("#name").html(data.name);
 	$("#temp").html(data.main.temp);
 	$("#humidity").html(data.main.humidity);
-    $("#timezone").html(data.timezone);
+    $("#highTemp").html(data.main.temp_max);
+    $("#minTemp").html(data.main.temp_min);
     $("#rain").html(data.weather[0].main);
+
+    if (data.weather[0].main === "Clear") {
+        console.log("happy face")
+        return showImage;
+    }else {
+        console.log("sad face");
+    }
 }
 
 $("form").on("submit", getWeatherData);
+
+function showImage() {
+    const img = document.createElement('div');
+    document.body.appendChild(img)
+    img.innerHTML = "<img src='sun_jpg_jpg-3.jpeg></img>";
+}
