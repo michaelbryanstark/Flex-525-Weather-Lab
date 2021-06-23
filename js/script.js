@@ -24,6 +24,8 @@
 	$("#name").html(data.name);
 	$("#temp").html(data.main.temp);
 	$("#humidity").html(data.main.humidity);
+    $("#timezone").html(data.timezone);
+    $("#rain").html(data.weather[0].main);
 }
 
 $("form").on("submit", getWeatherData);
